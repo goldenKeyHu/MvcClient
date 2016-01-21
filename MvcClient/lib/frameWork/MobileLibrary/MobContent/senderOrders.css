@@ -1,0 +1,138 @@
+body, p, form, input, button, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6 {
+    margin: 0px;
+    padding: 0px;
+    list-style: none outside none;
+}
+
+.myOrderContent  .order_change_con {
+    padding: 0px 10px;
+}
+
+.myOrderContent .package_detail {
+    margin-top: 10px;
+    border: 1px solid #E5E5E5;
+}
+
+.myOrderContent .package_detail > p {
+    height: 33px;
+    line-height: 33px;
+    padding-left: 8px;
+    font-size: 12px;
+    position: relative;
+    background-color:#EEE;
+}
+
+em, i, cite {
+    font-style: normal;
+}
+
+.myOrderContent .package_detail > p span {
+    position: absolute;
+    right: 10px;
+}
+
+.myOrderContent .package_detail > .items {
+    display: block;
+	overflow:hidden;
+}
+.myOrderContent .a_link {
+    display: block;
+    width: 100%;
+    background-size: 7px 13px;
+    background-position: 95% center;
+    background-repeat: no-repeat;
+}
+
+.myOrderContent .package_detail > .items ul {
+
+}
+
+.myOrderContent .package_detail > .items ul li {
+    position: relative;
+    overflow: hidden;
+}
+
+.myOrderContent .package_detail > .items ul li img {
+    vertical-align: top;
+	border: medium none;
+	max-width: 100%;
+}
+
+.myOrderContent .package_detail > .items > span {
+    float: right;
+    margin-right: 10%;
+    font-size: 12px;
+}
+
+a {
+    color: #666;
+}
+
+.myOrderContent .order_info {
+    height: 43px;
+    padding: 0px 8px;
+    display: block;
+    font-size: 12px;
+}
+
+.myOrderContent .order_info .info {
+    padding-top: 4px;
+	float:left;
+    overflow: hidden;
+}
+
+.myOrderContent .order_info .info span {
+    display: block;
+    color: #999;
+    height: 19px;
+    line-height: 19px;
+}
+
+.myOrderContent .order_info .status {
+    flex: 1 1 0%;
+    text-align: right;
+    line-height: 43px;
+}
+
+.myOrderContent .order_info .status .timer:before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-image: url('../images/timer.png');
+    background-size: 14px auto;
+    vertical-align: middle;
+    margin-top: -3px;
+    margin-right: 5px;
+}
+
+.myOrderContent .order_info .status span {
+    display: inline-block;
+    vertical-align: middle;
+    color: #FF3C3C;
+    height: 14px;
+    line-height: 14px;
+    margin-right: 10px;
+}
+
+.myOrderContent .order_info .status .timer {
+    display: inline-block;
+    vertical-align: middle;
+    color: #FF3C3C;
+    height: 14px;
+    line-height: 14px;
+    margin-right: 10px;
+}
+
+.myOrderContent .order_info .status a {
+    display: inline-block;
+    background: none repeat scroll 0% 0% #42A92C;
+    color: #FFF;
+    text-align: center;
+    border-radius: 2px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 14px;
+    padding: 0px 13px;
+    vertical-align: middle;
+}

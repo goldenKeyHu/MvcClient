@@ -1,0 +1,9 @@
+#username-box,#password-box{margin-top:10px; width:90%; height:35px; border:1px #CCCCCC solid; padding-left:0px; color:#000; border-radius: 3px 3px 3px 3px;}
+#username-box span{display:block; height:35px; line-height:35px; float:left; width:25%; border-right:1px #CCCCCC solid; background:#E6E6E6;}
+#username-box input{ height:30px; width:70%; border:0px; color:#999; display:block;}
+#username-box input:focus{outline:none;}
+#password-box span{display:block; height:35px; line-height:35px; float:left; width:25%; border-right:1px #CCCCCC solid; background:#E6E6E6;}
+#password-box input{ height:30px; width:70%; border:0px; color:#999; display:block;}
+#password-box input:focus{outline:none;}
+#error_note{width:90%; height:30px; line-height:30px; color:#F00; margin-top:20px;}
+button{ display:block; margin-top:10px;float:left; width:45%; height:35px; border:1px #42A92C solid; color:#fff; border-radius: 3px 3px 3px 3px; margin-left:auto; margin-right:auto; background: none repeat scroll 0% 0% #42A92C;}

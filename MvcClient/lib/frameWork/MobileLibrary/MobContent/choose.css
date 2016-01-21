@@ -1,0 +1,31 @@
+body, p, form, input, button, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6 {
+    margin: 0px;
+    padding: 0px;
+    list-style: none outside none;
+}
+
+.choose_city_main .choose_city_content {
+    flex: 1 1 0%;
+    overflow: hidden;
+    position: relative;
+}
+
+.choose_city_content li[name] {
+    background:#d7d7d7;
+    height: 35px;
+    line-height: 35px;
+	font-weight:bold;
+}
+
+.choose_city_content li {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #E5E5E5;
+    color: #666;
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+a{
+	text-decoration:none;
+}

@@ -1,0 +1,118 @@
+/*通用样式*/
+
+*{font-family: "微软雅黑","Microsoft YaHei",Tahoma,sans-serif; }
+
+body{ margin:0px; /*background:#E6E6E6;*/}
+
+div{ margin-left:auto; margin-right:auto; text-align:center; color:#FFF;}
+
+a{text-decoration:none;}
+
+
+
+/*输入框样式*/
+
+.input-text{margin-top:10px; width:90%; height:35px; border:1px #CCCCCC solid; padding-left:10px; color:#999;}
+
+.input-text-hover{margin-top:10px; width:90%; height:35px; border:1px #09F solid;padding-left:10px;}
+
+.input-text-error{margin-top:10px; width:90%; height:35px; border:1px #DB0016 solid;padding-left:10px; color:#999;}
+
+
+
+/*按钮样式*/
+
+.input-button{width:90%; height:40px; line-height:40px; font-size:16px; background:#42A92C; margin-top:10px; cursor:pointer; border:0px; color:#FFF; margin-left:auto; margin-right:auto; display:block;}
+
+.input-button:hover{background:#42A92C;}
+
+.input-button a{color:#FFF;}
+
+
+
+/*网站头部*/
+
+/*.page-header{height:50px; width:100%; line-height:50px; color:#333; background:#FFF; font-size:18px; text-align:center; position:relative;}*/
+
+.logo-img{ height:85px; width:200px; background:url(../images/logo.png) no-repeat;}
+
+.go-back{ width:50px; height:30px; line-height:30px; display:block; position:absolute; top:10px; left:5px; background:#FC0; color:#FFF;  border-radius: 3px 3px 3px 3px; cursor:pointer;}
+
+
+
+/*网站底部*/
+
+.page-footer{width:100%;overflow:hidden;color:#999; margin-top:20px; font-size:14px;}
+
+
+
+/*阴影边框样式*/
+
+.shadow-box{width:95%; margin-top:10px; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); background:#FFF; overflow:hidden;}
+
+
+
+/*头像*/
+
+.user-header-img{width:70px; height:70px; float:left; margin-top:5px; background:#FFF; border:1px #CCCCCC solid; margin-left:5px;}
+
+
+
+/*首页分类列表*/
+
+.list-style{width:100%; height:30px; background:#F90; line-height:30px; margin-bottom:10px;}
+
+.list-style a { color:#FFF;}
+
+
+
+/*列表子分类*/
+
+.list-child{height:30px; line-height:30px; font-size:12px; border:1px #999999 solid; float:left;border-radius: 5px 5px 5px 5px; margin-right:5px; padding-left:5px; padding-right:5px; background:#FFF; margin-bottom:5px; }
+
+.list-child a{color:#333;}
+
+
+
+/*商品列表外边框*/
+
+.goods_list{width:95%; height:100px; background:#FFF;box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-top:10px; overflow:hidden;}
+
+.goods_list a{color:#999;}
+
+
+
+/*商品详情页面小标题*/
+
+.g-info-title{width:100%; height:30px; line-height:30px; border-bottom:1px #CCCCCC dashed; color:#333;}
+
+
+
+/*商品属性*/
+
+.g-info-ul{width:100%; list-style:none; padding:0px;}
+
+.g-info-ul li{ cursor:pointer;}
+
+.g-info-li{width:95%; border:1px #999999 solid; margin-left:auto; margin-right:auto; margin-bottom:5px;}
+
+.g-info-li:hover{border:1px #F60 solid; color:#F60;}
+
+.g-info-li-select{width:95%; border:1px #F60 solid; color:#F60; margin-left:auto; margin-right:auto; margin-bottom:5px;}
+
+
+
+/*注册页面 input*/
+
+.register-input{ width:90%;}
+
+
+
+/*影票页面*/
+
+.ticket-type{height:100%; width:95%; color:#000; padding-top:5px;  border:3px #CCC solid; color:#CCC;}
+
+.ticket-type-select{height:100%; width:95%; color:#000; padding-top:5px;  border:3px #FF9900 solid; color:#FF9900;}
+
+
+

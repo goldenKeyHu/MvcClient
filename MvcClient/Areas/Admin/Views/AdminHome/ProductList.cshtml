@@ -1,0 +1,182 @@
+﻿
+@{
+    ViewBag.Title = "ProductList";
+}
+
+<div class="outter">
+    @RenderPage("~/Areas/Admin/Views/AdminHome/ProductControl.cshtml")
+    <div class="grid_10">
+        <div>
+            <h2>商品管理</h2>
+            <div class="block">
+                @RenderPage("~/Areas/Admin/Views/AdminHome/ProductShowControl.cshtml")
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+        $("div").remove("#example_length");
+        $("div").remove("#example_filter");
+</script>
+
+@section headCode{
+<style>
+    .outter {
+        width: 1300px;
+    }
+
+    .grid_10 {
+        width: 100px;
+    }
+
+    .gradeX {
+        text-align: center;
+    }
+
+    .users {
+    }
+
+    .formcontainer {
+        padding-left: 30px;
+        margin-left: 10px;
+    }
+
+    .userlist {
+        width: 59%;
+        float: left;
+    }
+
+    .block {
+        height: 200px;
+    }
+
+    .inputtext {
+        width: 180px;
+    }
+
+    td label {
+        font-size: 13px;
+    }
+
+    .coltd {
+        width: 80px;
+    }
+
+    .menuitem {
+    }
+
+    .addbtn {
+        margin-left: 850px;
+    }
+
+    .addproduct {
+        height: 27px;
+        width: 100px;
+        margin-bottom: 10px;
+        margin-right: 80px;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .tableheader {
+        height: 44px;
+        width: 1035px;
+        background-color: #c3dddd;
+        padding-top: 7px;
+        padding-left: 10px;
+    }
+
+    td {
+        height: 30px;
+        vertical-align: middle;
+    }
+
+        td img {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #d9d7d7;
+            margin-top: 7px;
+        }
+</style>
+
+
+<script type="text/javascript">
+        $(".grid_10").css('width', '1000px');
+</script>
+
+<script type="text/javascript">
+        var pageSize=10;
+        var pageIndex = 1;
+        var totalNum = 0;
+        $(function () {
+            initProductList();
+            bindLocationButton();
+            deleteEntity();
+            GoToUpdate();
+        })
+
+
+            function initProductList() {
+                $.get('', { requestUrl:'/Product/ReadPagedData',pageSize: pageSize, pageIndex: pageIndex }, function (data) {
+                    $('tbody').empty();
+                    totalNum = data.totalNum;
+                    if (data.totalNum > 10) {
+                        $('#shang').show();
+                        $('#xia').show();
+                    }
+                    for (var key in data.entities) {
+
+                        var main = data.entities[key];
+                        //alert("");
+                        //$('#productListTable').append('<div class="itemOuter"><div id="itemW37" class="itemWrapper"><a href="<%= ConfigurationManager.AppSettings["domain"]%>/Product/Detail/'+main.Id+'"><img id="itempic37" width="290" height="290" src="../../'+main.ImageUrl+'"><h6>' + main.Name + '</h6><div class="whyme">一份菜+一份小菜+一份米饭</div><div class="priceSection"><div class="priceNumber"><span class="mainPrice">' + main.UnitPrice + '.0元</span></div><div class="countSection">今日有货，请放心点购！</div></div></a></div></div>');
+                        $('tbody').append('<tr class="odd gradeX" id="' + main.Id + '"><td>' + main.Name + '</td><td><img src="' + main.ImageUrl + '"></td><td>' + main.UnitPrice + '</td><td>' + main.CateGoryId + '</td><td>' + main.IsOffered + '</td><td>' + main.IsReComent + '</td><td>' + main.Description + '</td><td><span class="updateSpan">修改</span> <span class="deleteSpan">删除</span></td></tr>');
+                    }
+                })
+            }
+
+        function bindLocationButton() {
+
+            $('#shang').click(function () {
+                if (pageIndex - 1 > 0) {
+                    pageIndex -= 1;
+                    initProductList();
+                }else{
+                    alert('已经是最前一页了');
+                }
+            })
+
+            $('#xia').click(function () {
+                var maxPageNum = (totalNum - 1) / 10 + 1;
+                if (pageIndex + 1 <= maxPageNum) {
+                    pageIndex += 1;
+                    initProductList();
+                }else{
+                    alert('已经是最后一页了');
+                }
+            })
+        }
+
+
+        function deleteEntity() {
+            $('.deleteSpan').live('click', function () {
+                var id = $(this).parent('td').parent('tr').attr('id');
+                $.get('<%= ConfigurationManager.AppSettings["domain"]%>Product/MockDeleteById/' + id, {}, function (data) {
+                        $(this).parent('td').parent('tr').hide();
+                        showmessageWindow('删除成功');
+                        initProductList();
+                    })
+                })
+        }
+
+
+        function GoToUpdate() {
+            $('.updateSpan').live('click', function () {
+                var id = $(this).parent('td').parent('tr').attr('id');
+                window.location.href = "<%= ConfigurationManager.AppSettings["domain"]%>admin/UpdateProduct/"+id;
+            })
+        }
+
+</script>
+
+    }
+

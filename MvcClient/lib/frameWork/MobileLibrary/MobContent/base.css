@@ -1,0 +1,142 @@
+/*基础*/
+body{ margin:0px;}
+div{ margin-left:auto; margin-right:auto;}
+p, dd, ul, li, menu, h1, h2, h3, h4 {
+    padding: 0px;
+    margin: 0px;
+    list-style: none outside none;
+}
+
+a{
+	text-decoration:none;
+}
+
+/*网站头部*/
+header {
+    background: none repeat scroll 0% 0% #42A92C;
+    width: 100%;
+    height: 45px;
+    /*border-bottom: 1px solid #B8393C;*/
+}
+#header_fixed {
+    position: fixed;
+    top: 0px;
+	z-index:999;
+}
+
+.header_fixed_height{
+	height:45px;
+	width:100%;
+}
+
+#locate {
+    display: block;
+    height: 45px;
+    line-height: 43px;
+    padding-left: 36px;
+    color: #FFF;
+    background: url('../images/position.png') no-repeat scroll 7px 10px transparent;
+}
+
+#header_fixed .title{
+	width:100%;
+	height:45px;
+	line-height:45px;
+	text-align:center;
+	color:#FFF;
+	text-shadow: 0px 1px 0px #333;
+}
+header .back {
+    display: block;
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background: url(../images/i_back.png) repeat scroll 0% 0% #E4393C;
+}
+
+header .back:hover {
+    background-color: #B8393C;
+}
+
+/*网站底部*/
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 60px;
+    border-top: 1px solid #CCC;
+    background-color: #FFF;
+}
+
+.footer_fixed_height{
+	height:80px;
+	width:100%;
+}
+
+nav menu {
+    position: relative;
+    float: left;
+    width: 33.33%;
+	background-color:#FFF;
+}
+
+nav menu .cart_num {
+    position: absolute;
+    display: block;
+    top: 2px;
+    right: 20px;
+    background: none repeat scroll 0% 0% #F60;
+    color: #FFF;
+    font-size: 12px;
+    line-height: 12px;
+    padding: 3px 5px;
+    border-radius: 9px;
+}
+
+nav a {
+    display: block;
+    text-align: center;
+    font-size: 9pt;
+    text-decoration: none;
+    color: #666;
+}
+
+nav a i {
+    display: block;
+    width: 45px;
+    height: 40px;
+    margin: 0px auto;
+    /*background-image: url('../images/i_nav.png');*/
+}
+
+nav .home i {
+    background:url(../images/navigation_homebutton_normal.png) no-repeat center center;
+}
+
+nav .cart i {
+    background:url(../images/navigation_cartbutton_normal.png) no-repeat center center;
+}
+
+nav .user i {
+    background:url(../images/navigation_mystorebutton_normal.png) no-repeat center center;
+}
+
+/*翻页*/
+.layout .pagebar{
+	margin:10px;
+    position: relative;
+    background-color: #FFF;
+    border: 1px solid #E8E8E8;
+	height:40px;
+	line-height:40px;
+}
+
+.layout .pagebar > div{
+	position: relative;
+	float: left;
+	width: 33.33%;
+	text-align:center;
+}
+
+.layout{width:320px;margin:0 auto;}
+

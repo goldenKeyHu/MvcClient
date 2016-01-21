@@ -1,0 +1,232 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <style type="text/css">
+        body {
+            min-height: 100%;
+            font-size: 12.5pt;
+            font-family: 微软雅黑,Arial;
+            color: #000;
+            padding: 0px;
+            margin: 0px;
+            background: #f8f8f8;
+        }
+
+        div {
+            box-sizing: border-box;
+        }
+
+        li {
+            display: list-item;
+        }
+
+        ul, li {
+            padding: 0px;
+            margin: 0px;
+            list-style: none outside none;
+            list-style: none outside none;
+        }
+
+        ul, menu, dir {
+            display: block;
+            list-style-type: disc;
+            -webkit-margin-before: 1em;
+            -webkit-margin-after: 1em;
+            -webkit-margin-start: 0px;
+            -webkit-margin-end: 0px;
+            -webkit-padding-start: 40px;
+        }
+
+        a {
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .flex_box a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        .footer-nav-div {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            position: fixed;
+            bottom: -1px;
+            width: 100%;
+            z-index: 0;
+        }
+
+        .footer-nav2 {
+            display: block;
+            margin: 0 auto;
+            list-style: none;
+            height: 44px;
+            border-top: 1px solid #808080;
+            background-image: url("/lib/frameWork/MobileLibrary/MobImages/footerBac.png");
+        }
+
+            .footer-nav2 > li {
+                margin: 0px;
+                padding: 0px;
+                text-align: center;
+                vertical-align: middle;
+                height: 44px;
+                float: left;
+                box-sizing: border-box;
+                position: relative;
+                border-left: 1px solid #808080;
+            }
+
+            .footer-nav2 a, .footer-nav2 div {
+                text-align: center;
+                vertical-align: middle;
+                color: #fff;
+                display: block;
+                text-decoration: none;
+            }
+
+            .footer-nav2 .text {
+                font-size: 16px;
+                color: #414141;
+                text-shadow: #e5e5e5 0 1px 0;
+                text-decoration: none;
+                text-align: center;
+                display: block;
+                overflow: hidden;
+                height: 44px;
+                line-height: 44px;
+            }
+
+            .footer-nav2 .text2 {
+                font-size: 14px;
+                color: #414141;
+                text-shadow: #e5e5e5 0 1px 0;
+                text-decoration: none;
+                text-align: center;
+                display: block;
+                overflow: hidden;
+                line-height: 40px;
+            }
+
+        .showUpList {
+            display: block;
+            position: absolute;
+        }
+
+        .upListDefault {
+            display: none;
+        }
+
+        .firstMenuItem {
+            width: 33.333333333333336%;
+        }
+
+        .secondMenuContainerShow {
+            position: relative;
+            bottom: 165px;
+            width: 100%;
+            background-color: #e5e5e5;
+        }
+
+        .secondMenuContainerDefault {
+            display: none;
+        }
+
+        .secondMenuItem {
+            border: 1px solid #e5e5e5;
+            width: 100%;
+            height: 40px;
+            border-top: 1px solid #808080;
+            border-left: 1px solid #808080;
+            border-right: 1px solid #808080;
+        }
+
+
+
+        .placeHolder {
+            width: 100%;
+            height: 44px;
+            margin: 0px;
+        }
+    </style>
+    <link href="~/lib/frameWork/MobileLibrary/MobContent/base.css" rel="stylesheet" />
+
+    <link href="~/lib/frameWork/MobileLibrary/MobContent/base.css" rel="stylesheet" />
+    <script src="~/lib/frameWork/MobileLibrary/MobScripts/jquery-1.8.2.min.js"></script>
+    <script src="~/lib/frameWork/MobileLibrary/MobScripts/common.js"></script>
+
+    <script type="text/javascript">
+
+        //show and hide upList
+        $(function () {
+
+            //goToPostPage();
+
+
+            var a = 1;
+            $('.firstMenuItem').click(function () {
+                a++;
+                if (a % 2 == 0) {
+                    $(this).children('.secondMenuContainerDefault').addClass('secondMenuContainerShow');
+                } else {
+                    $(this).children('.secondMenuContainerDefault').removeClass('secondMenuContainerShow');
+                }
+            }).mouseleave(function () {
+                $(this).children('.secondMenuContainerDefault').removeClass('secondMenuContainerShow');
+                a = 1;
+            });
+        })
+
+        /*
+        function goToPostPage() {       //关闭网站后，跳转到通知页面
+            $.post('#', {}, function (data) {
+               if (data == 'true') {
+                   window.location.href = '#Mobile/Announce';
+                }
+            });
+        }*/
+
+    </script>
+    @RenderSection("headCode", false)
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+
+    <div class="placeHolder">
+    </div>
+    <div class="footer-nav-div">
+        <ul class="footer-nav2">
+            <li class="firstMenuItem">
+                <a href="#">
+                    <span class="text">商 城</span>
+                </a>
+            </li>
+            <li class="firstMenuItem">
+                <a href="<#" target="_self" data-type="5"><span class="text">购 物 车</span></a>
+                <!--                <div class="secondMenuContainerDefault">
+                    <div class="secondMenuItem"><a href="#"><span class="text2">安徽科技学院</span></a></div>
+                    <div class="secondMenuItem"><a href="#"><span class="text2">凤阳师范</span></a></div>
+                    <div class="secondMenuItem"><a href="#"><span class="text2">安徽科技学院</span></a></div>
+                </div>-->
+            </li>
+            <li class="firstMenuItem">
+                <a href="#"><span class="text">个人中心</span></a>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="messageWindow" style="display:none;width:300px;height:150px;border:1px solid #42A92C;background-color:#42A92C; text-align:center;position:fixed;">
+        <span class="showMessage" style="font-size:30px;font-weight:600;line-height:150px;color:#fff;"></span>
+    </div>
+        
+</body>
+</html>

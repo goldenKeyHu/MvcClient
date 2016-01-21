@@ -1,0 +1,264 @@
+﻿
+@{
+    ViewBag.Title = "ProductAdding";
+}
+
+<div class="outter">
+    @RenderPage("~/Areas/Admin/Views/AdminHome/ProductControl.cshtml")
+    <div class="grid_10">
+        <h2>商品管理</h2>
+        <div class="block">
+            <div class="myFormContainer">
+                <form id="productForm">
+                    <ul>
+                        <li>
+                            <label class="formlabel">商品类别：</label><select id="select" name="CateGoryId">
+                                <option value="1">外卖</option>
+                                <option value="2">饮料小吃</option>
+                                <option value="3">生活用品</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label class="formlabel">图片上传：</label><input type="hidden" name="ImageUrl" value="123" /><div style="display: inline"><span id="uploadify"></span></div>
+                        </li>
+                        <li>
+                            <label class="formlabel">商品名称：</label><input type="text" class="mini1" name="Name" />
+                        </li>
+                        <li>
+                            <label class="formlabel">商品单价：</label><input type="text" class="mini1" name="UnitPrice" />
+                        </li>
+                        <li>
+                            <label class="formlabel">商品简述：</label><input type="text" class="mini1" name="Description" />
+                        </li>
+                        <li>
+                            <label class="formlabel">是否有货：</label><select id="select1" name="IsOffered">
+                                <option value="1">有货</option>
+                                <option value="0">无货</option>
+                            </select>
+                        </li>
+                        <li>
+                            <label class="formlabel">是否推荐：</label><select id="select2" name="IsReComent">
+                                <option value="0">不推荐</option>
+                                <option value="1">推荐</option>
+                            </select>
+                        </li>
+                    </ul>
+                </form>
+                <input type="submit" id="submit" value="提交商品" />
+
+            </div>
+            <div class="showmessage">
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $("div").remove("#example_length");
+    $("div").remove("#example_filter");
+</script>
+
+@section headCode{
+    <style>
+        .outter {
+            width: 1300px;
+        }
+
+        .grid_10 {
+            width: 100px;
+        }
+
+        .users {
+        }
+
+        .formcontainer {
+            padding-left: 30px;
+            margin-left: 10px;
+        }
+
+        .userlist {
+            width: 59%;
+            float: left;
+        }
+
+        .block {
+            height: 500px;
+        }
+
+        .inputtext {
+            width: 180px;
+        }
+
+        td label {
+            font-size: 13px;
+        }
+
+        .coltd {
+            width: 80px;
+        }
+
+        .menuitem {
+        }
+
+        .addbtn {
+            margin-left: 850px;
+        }
+
+        #example_filter {
+        }
+
+        .tableheader {
+            height: 44px;
+            width: 1035px;
+            background-color: #c3dddd;
+            padding-top: 7px;
+            padding-left: 10px;
+        }
+
+        .submit {
+            margin-left: 250px;
+            margin-top: 25px;
+            width: 80px;
+        }
+
+        .back {
+            margin-left: 320px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+
+        #outwindow {
+            width: 450px;
+            position: absolute;
+            top: 200px;
+            left: 400px;
+        }
+
+        #outwindow {
+            height: 300px;
+        }
+
+        #windowborder {
+            border: 1px solid #9c9b9b;
+        }
+
+
+
+        .myFormContainer {
+            width: 500px;
+            border: 1px solid red;
+            min-height: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+            .myFormContainer ul {
+                margin-left: 50px;
+                margin-top: 30px;
+            }
+
+            .myFormContainer li {
+                list-style-type: none;
+                margin-bottom: 7px;
+                font-size: 16px;
+            }
+
+            .myFormContainer .formlabel {
+                margin-right: 11px;
+            }
+
+        #submit {
+            float: right;
+        }
+
+        .mini1 {
+            width: 200px;
+        }
+
+        .showmessage {
+            width: 500px;
+            border: 1px solid red;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 25px;
+            display: none;
+        }
+    </style>
+
+    <link href="~/lib/plugins/uploadify/uploadify.css" rel="stylesheet" />
+    <script src="~/lib/plugins/uploadify/jquery.uploadify.min.js"></script>
+
+    <script type="text/javascript">
+        $(".grid_10").css('width', '1000px');
+        $(function () {
+            bindsubmitProduct();
+            //bindCateChange();
+            //loadCateInCate(1);
+            //loadCateInCate();
+
+
+            $('#uploadify').uploadify({
+                uploader: 'http://localhost:10722/UploadHelper/ImageUpload',           // 服务器端处理地址
+                swf: '/lib/plugins/uploadify/uploadify.swf',    // 上传使用的 Flash
+
+                width: 60,                          // 按钮的宽度
+                height: 23,                         // 按钮的高度
+                buttonText: "上传",                 // 按钮上的文字
+                buttonCursor: 'hand',                // 按钮的鼠标图标
+
+                fileObjName: 'Filedata',            // 上传参数名称
+
+                // 两个配套使用
+                fileTypeExts: "*.jpg;*.png",             // 扩展名
+                fileTypeDesc: "请选择 jpg png 文件",     // 文件说明
+
+                auto: true,                // 选择之后，自动开始上传
+                multi: true,               // 是否支持同时上传多个文件
+                queueSizeLimit: 5,        // 允许多文件上传的时候，同时上传文件的个数
+                onUploadSuccess: function (file, data, response) {
+                    if (response == true) {
+                        $('input[name="ImageUrl"]').attr('IsSucceed', response);
+                        $('input[name="ImageUrl"]').val(data);
+                    }
+                }
+            });
+
+        })
+
+
+        function bindsubmitProduct() {
+            $("#submit").click(function () {
+                if ($('input[name="ImageUrl"]').attr('IsSucceed') == 'true') {
+                    var formData = $('#productForm').serializeJson();
+                    formData.ReuestUrl = '/apix/FoodShop/Product';
+                    $.post("/Home/RequestHelper"
+                        , formData
+                        , function (data) {
+                            if (data == 'False') {
+                                $('.showmessage').text('添加失败');
+
+                            } else if (data == 'True') {
+                                $('.showmessage').text('添加成功');
+                            }
+                            $('.showmessage').show(1500, function () {
+                                $('.showmessage').hide(1500);
+                            })
+                        })
+                } else {
+                    alert('还未上传图片，或者图片上传失败');
+                }
+
+            })
+        }
+
+
+        function bindCateChange() {
+            $('#select').change(function () {
+                var cateId = $(this).find("option:selected").val();
+                loadCateInCate(cateId);
+            })
+        }
+
+
+        
+    </script>
+}
